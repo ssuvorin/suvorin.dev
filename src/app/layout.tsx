@@ -70,13 +70,21 @@ export default function RootLayout({
         {/* Switzer font from Bunny Fonts CDN */}
         <link href="https://fonts.bunny.net/css?family=switzer:400,500,600,700,800" rel="stylesheet" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        {/* Google Analytics */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-54ED215LQ7"></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: 'window.dataLayer = window.dataLayer || [];' +
+              'function gtag(){dataLayer.push(arguments);}' +
+              "gtag('js', new Date());" +
+              "gtag('config', 'G-54ED215LQ7');"
+          }}
+        />
       </head>
       <body
         className={`${inter.variable} font-inter bg-charcoal text-steel antialiased overflow-x-hidden`}
       >
-        <ThemeProvider
-          defaultTheme="dark"
-        >
+        <ThemeProvider defaultTheme="dark">
           <MotionConfig
             transition={{
               type: 'spring',
