@@ -7,7 +7,7 @@ import Link from 'next/link';
 import { ArrowRight, ExternalLink } from 'lucide-react';
 import { getTopCases } from '../../content/cases';
 
-const cases = getTopCases(6);
+const cases = getTopCases();
 
 export function FeaturedCases() {
   const [ref, inView] = useInView({
