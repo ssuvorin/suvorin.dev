@@ -1,6 +1,8 @@
-"use client";
-import { motion } from "framer-motion";
-import React from "react";
+'use client';
+
+import { motion } from 'framer-motion';
+import React from 'react';
+import Image from 'next/image';
 
 interface CaseAnimatedContentProps {
   caseData: {
@@ -23,7 +25,14 @@ export default function CaseAnimatedContent({ caseData }: CaseAnimatedContentPro
         transition={{ delay: 0.2 }}
         className="mb-10"
       >
-        <img src={caseData.hero} alt={caseData.title} className="w-full rounded-xl mb-8 shadow-lg" />
+        <Image
+          src={caseData.hero}
+          alt={caseData.title}
+          className="w-full rounded-xl mb-8 shadow-lg"
+          width={1200}
+          height={630}
+          priority={false}
+        />
         <h1 className="text-4xl sm:text-5xl font-switzer font-bold text-white mb-4">
           {caseData.title}
         </h1>
@@ -48,11 +57,11 @@ export default function CaseAnimatedContent({ caseData }: CaseAnimatedContentPro
         <p className="mb-4 text-steel">{caseData.solution}</p>
         <h2 className="text-2xl font-bold text-cyber-lime mb-2">Results</h2>
         <ul className="list-disc pl-6 text-electric">
-          {caseData.result.split("\n").map((line, idx) => (
-            <li key={idx}>{line.replace(/^•\s*/, "")}</li>
+          {caseData.result.split('\n').map((line) => (
+            <li key={line}>{line.replace(/^•\s*/, '')}</li>
           ))}
         </ul>
       </motion.div>
     </>
   );
-} 
+}

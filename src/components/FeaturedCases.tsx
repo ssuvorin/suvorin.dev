@@ -2,9 +2,9 @@
 
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { useState } from 'react';
 import Link from 'next/link';
 import { ArrowRight, ExternalLink } from 'lucide-react';
+import Image from 'next/image';
 import { getTopCases } from '../../content/cases';
 
 const cases = getTopCases();
@@ -14,8 +14,6 @@ export function FeaturedCases() {
     triggerOnce: true,
     threshold: 0.1,
   });
-
-  const [activeCategory, setActiveCategory] = useState('all');
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -86,11 +84,13 @@ export function FeaturedCases() {
                 <div className="glassmorphism rounded-xl overflow-hidden case-thumbnail h-full">
                   {/* Image */}
                   <div className="relative h-48 bg-gradient-to-br from-onyx to-charcoal">
-                    <img
+                    <Image
                       src={caseItem.hero}
                       alt={caseItem.title}
                       className="object-cover w-full h-full rounded-t-xl"
                       loading="lazy"
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
                     <div className="absolute top-4 right-4">
@@ -123,8 +123,8 @@ export function FeaturedCases() {
                     {/* Result */}
                     <div className="flex items-center text-sm text-electric mb-4">
                       <ul className="list-disc pl-5">
-                        {caseItem.result.split('\n').map((line, idx) => (
-                          <li key={idx}>
+                        {caseItem.result.split('\n').map((line) => (
+                          <li key={line}>
                             {line.replace(/^•\s*/, '')}
                           </li>
                         ))}

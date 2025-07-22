@@ -31,12 +31,14 @@ export function CTA() {
 
       if (response.ok) {
         setIsSubmitted(true);
-        setFormData({ name: '', email: '', phone: '', project: '' });
+        setFormData({
+          name: '', email: '', phone: '', project: '',
+        });
       } else {
         const data = await response.json();
         setError(data.error || 'Failed to submit');
       }
-    } catch (error) {
+    } catch (networkError) {
       setError('Network error. Please try again.');
     } finally {
       setIsSubmitting(false);
@@ -93,7 +95,6 @@ export function CTA() {
                   <label htmlFor="name" className="block text-sm font-medium text-steel mb-2">
                     Name
                   </label>
-                  <input type="hidden" id="name" name="name" tabIndex={-1} aria-hidden="true" />
                   <input
                     type="text"
                     id="name"
@@ -111,7 +112,6 @@ export function CTA() {
                   <label htmlFor="email" className="block text-sm font-medium text-steel mb-2">
                     Email
                   </label>
-                  <input type="hidden" id="email" name="email" tabIndex={-1} aria-hidden="true" />
                   <input
                     type="email"
                     id="email"
@@ -129,7 +129,6 @@ export function CTA() {
                   <label htmlFor="phone" className="block text-sm font-medium text-steel mb-2">
                     Phone
                   </label>
-                  <input type="hidden" id="phone" name="phone" tabIndex={-1} aria-hidden="true" />
                   <input
                     type="tel"
                     id="phone"
@@ -147,7 +146,6 @@ export function CTA() {
                   <label htmlFor="project" className="block text-sm font-medium text-steel mb-2">
                     Project Details
                   </label>
-                  <input type="hidden" id="project" name="project" tabIndex={-1} aria-hidden="true" />
                   <textarea
                     id="project"
                     name="project"

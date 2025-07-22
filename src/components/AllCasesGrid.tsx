@@ -1,6 +1,8 @@
-"use client";
-import { motion } from "framer-motion";
-import Link from "next/link";
+'use client';
+
+import { motion } from 'framer-motion';
+import Link from 'next/link';
+import Image from 'next/image';
 
 export default function AllCasesGrid({ cases }: { cases: any[] }) {
   return (
@@ -12,7 +14,9 @@ export default function AllCasesGrid({ cases }: { cases: any[] }) {
         transition={{ duration: 0.6 }}
       >
         <h1 className="text-4xl sm:text-5xl font-switzer font-bold text-white mb-4">
-          All <span className="gradient-text">Cases</span>
+          All
+          {' '}
+          <span className="gradient-text">Cases</span>
         </h1>
         <p className="text-xl text-steel max-w-2xl mx-auto">
           AI, bots, and automation for startups and enterprises.
@@ -42,11 +46,13 @@ export default function AllCasesGrid({ cases }: { cases: any[] }) {
           >
             <Link href={`/cases/${caseItem.slug}`} className="block group h-full">
               <div className="relative h-48 bg-gradient-to-br from-onyx to-charcoal">
-                <img
+                <Image
                   src={caseItem.hero}
                   alt={caseItem.title}
                   className="object-cover w-full h-full rounded-t-xl"
                   loading="lazy"
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
               </div>
@@ -66,8 +72,10 @@ export default function AllCasesGrid({ cases }: { cases: any[] }) {
                 </h2>
                 {/* Removed year display here */}
                 <ul className="list-disc pl-5 text-electric mb-4">
-                  {caseItem.result.split('\n').map((line: string, idx: number) => (
-                    <li key={idx}>{line.replace(/^•\s*/, '')}</li>
+                  {caseItem.result.split('\n').map((line: string) => (
+                    <li key={line}>
+                      {line.replace(/^•\s*/, '')}
+                    </li>
                   ))}
                 </ul>
                 <div className="mt-auto flex items-center text-cyber-lime group-hover:translate-x-1 transition-transform">
@@ -81,4 +89,4 @@ export default function AllCasesGrid({ cases }: { cases: any[] }) {
       </motion.div>
     </>
   );
-} 
+}
