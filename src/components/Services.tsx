@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Tilt } from 'react-tilt';
+import Tilt from 'react-parallax-tilt';
 import {
   MessageSquare, Brain, Zap, Users,
 } from 'lucide-react';
@@ -97,12 +97,12 @@ export function Services() {
           {services.map((service) => (
             <motion.div key={service.title} variants={cardVariants}>
               <Tilt
-                options={{
-                  max: 6,
-                  speed: 400,
-                  glare: true,
-                  'max-glare': 0.3,
-                }}
+                tiltMaxAngleX={6}
+                tiltMaxAngleY={6}
+                scale={1.01}
+                transitionSpeed={400}
+                glareEnable={true}
+                glareMaxOpacity={0.3}
                 className="h-full"
               >
                 <div className="glassmorphism rounded-xl p-6 h-full card-tilt group">
