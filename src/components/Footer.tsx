@@ -125,7 +125,7 @@ export function Footer() {
               {' '}
               {new Date().getFullYear()}
               {' '}
-              suvorin.dev 
+              suvorin.dev
               All rights reserved.
             </div>
 

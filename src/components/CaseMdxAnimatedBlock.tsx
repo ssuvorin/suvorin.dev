@@ -1,7 +1,8 @@
-"use client";
-import { motion } from "framer-motion";
-import { MDXRemote } from "next-mdx-remote/rsc";
-import React from "react";
+'use client';
+
+import { motion } from 'framer-motion';
+import { MDXRemote } from 'next-mdx-remote/rsc';
+import React from 'react';
 
 interface CaseMdxAnimatedBlockProps {
   mdxContent: string;
@@ -12,7 +13,7 @@ export default function CaseMdxAnimatedBlock({ mdxContent }: CaseMdxAnimatedBloc
     <motion.article
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.7, type: "spring", stiffness: 80 }}
+      transition={{ duration: 0.7, type: 'spring', stiffness: 80 }}
       className="glassmorphism rounded-2xl p-8 md:p-12 mb-10 shadow-elev-glow border border-cyber-lime/10"
     >
       <div className="mb-8 border-b border-cyber-lime/10 pb-6">
@@ -24,4 +25,4 @@ export default function CaseMdxAnimatedBlock({ mdxContent }: CaseMdxAnimatedBloc
       </div>
     </motion.article>
   );
-} 
+}

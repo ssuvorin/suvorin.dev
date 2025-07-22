@@ -79,7 +79,9 @@ export function Services() {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-4xl sm:text-5xl font-switzer font-bold text-white mb-6">
-            My <span className="gradient-text">Services</span>
+            My
+            {' '}
+            <span className="gradient-text">Services</span>
           </h2>
           <p className="text-xl text-steel max-w-3xl mx-auto">
             Fullstack development and AI solutions for startups and businesses
@@ -101,7 +103,7 @@ export function Services() {
                 tiltMaxAngleY={6}
                 scale={1.01}
                 transitionSpeed={400}
-                glareEnable={true}
+                glareEnable
                 glareMaxOpacity={0.3}
                 className="h-full"
               >

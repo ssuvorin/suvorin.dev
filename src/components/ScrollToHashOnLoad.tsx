@@ -1,4 +1,5 @@
-"use client";
+'use client';
+
 import { useEffect } from 'react';
 
 export function ScrollToHashOnLoad() {
@@ -11,4 +12,4 @@ export function ScrollToHashOnLoad() {
     }
   }, []);
   return null;
-} 
+}

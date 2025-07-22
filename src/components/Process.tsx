@@ -101,7 +101,9 @@ export function Process() {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-4xl sm:text-5xl font-switzer font-bold text-white mb-6">
-            My <span className="gradient-text">Process</span>
+            My
+            {' '}
+            <span className="gradient-text">Process</span>
           </h2>
           <p className="text-xl text-steel max-w-3xl mx-auto">
             My approach: fullstack development and AI, from idea to launch and beyond
@@ -135,7 +137,9 @@ export function Process() {
                       className="glassmorphism rounded-xl p-10 shadow-elev-glow max-w-xl lg:mr-12"
                       initial={{ x: -60, opacity: 0 }}
                       whileInView={{ x: 0, opacity: 1 }}
-                      transition={{ type: 'spring', stiffness: 80, damping: 18, delay: 0.1 * idx }}
+                      transition={{
+                        type: 'spring', stiffness: 80, damping: 18, delay: 0.1 * idx,
+                      }}
                       viewport={{ once: true, amount: 0.3 }}
                     >
                       <div className="flex items-center mb-4">
@@ -143,7 +147,10 @@ export function Process() {
                           <step.icon className="w-8 h-8 text-white" />
                         </div>
                         <div>
-                          <div className="text-sm font-medium text-cyber-lime mb-1">Step {idx + 1}</div>
+                          <div className="text-sm font-medium text-cyber-lime mb-1">
+                            Step
+                            {idx + 1}
+                          </div>
                           <h3 className="text-2xl font-switzer font-bold text-white mb-1">{step.title}</h3>
                         </div>
                       </div>
@@ -165,7 +172,9 @@ export function Process() {
                     className="w-10 h-10 bg-cyber-lime rounded-full shadow-elev-glow border-4 border-onyx flex items-center justify-center animate-glow"
                     initial={{ scale: 0.7, opacity: 0 }}
                     whileInView={{ scale: 1, opacity: 1 }}
-                    transition={{ type: 'spring', stiffness: 120, damping: 12, delay: 0.1 * idx }}
+                    transition={{
+                      type: 'spring', stiffness: 120, damping: 12, delay: 0.1 * idx,
+                    }}
                     viewport={{ once: true, amount: 0.3 }}
                   >
                     {/* Removed step number from dot */}
@@ -178,7 +187,9 @@ export function Process() {
                       className="glassmorphism rounded-xl p-10 shadow-elev-glow max-w-xl lg:ml-12"
                       initial={{ x: 60, opacity: 0 }}
                       whileInView={{ x: 0, opacity: 1 }}
-                      transition={{ type: 'spring', stiffness: 80, damping: 18, delay: 0.1 * idx }}
+                      transition={{
+                        type: 'spring', stiffness: 80, damping: 18, delay: 0.1 * idx,
+                      }}
                       viewport={{ once: true, amount: 0.3 }}
                     >
                       <div className="flex items-center mb-4">
@@ -186,7 +197,10 @@ export function Process() {
                           <step.icon className="w-8 h-8 text-white" />
                         </div>
                         <div>
-                          <div className="text-sm font-medium text-cyber-lime mb-1">Step {idx + 1}</div>
+                          <div className="text-sm font-medium text-cyber-lime mb-1">
+                            Step
+                            {idx + 1}
+                          </div>
                           <h3 className="text-2xl font-switzer font-bold text-white mb-1">{step.title}</h3>
                         </div>
                       </div>

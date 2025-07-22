@@ -30,12 +30,16 @@ export function CursorFollower() {
     };
 
     // WOW: scale up on interactive elements
-    const handlePointerOver = (e: MouseEvent) => {
-      if ((e.target as HTMLElement)?.closest('button, a, input, textarea, [role="button"], [tabindex]')) {
+    const handlePointerOver = (_e: MouseEvent) => {
+      if ((
+        (_e.target as HTMLElement)?.closest(
+          'button, a, input, textarea, [role="button"], [tabindex]',
+        )
+      )) {
         setIsActive(true);
       }
     };
-    const handlePointerOut = (e: MouseEvent) => {
+    const handlePointerOut = (_e: MouseEvent) => {
       setIsActive(false);
     };
 
@@ -60,6 +64,10 @@ export function CursorFollower() {
     cursorY.set(mousePosition.y);
   }, [mousePosition.x, mousePosition.y, cursorX, cursorY]);
 
+  // For scale/opacity ternary at L67, extract to variables:
+  const scale = isVisible ? (isActive ? 1.6 : 1) : 0;
+  const opacity = isVisible ? 1 : 0;
+
   return (
     <motion.div
       className="custom-cursor z-50 pointer-events-none"
@@ -70,8 +78,8 @@ export function CursorFollower() {
         translateY: '-50%',
       }}
       animate={{
-        scale: isVisible ? (isActive ? 1.6 : 1) : 0,
-        opacity: isVisible ? 1 : 0,
+        scale,
+        opacity,
       }}
       transition={{
         type: 'spring',

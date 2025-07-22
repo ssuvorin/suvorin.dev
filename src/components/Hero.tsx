@@ -1,8 +1,11 @@
 'use client';
 
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { useRef, useState, useEffect } from 'react';
+import { useRef, useEffect, useCallback } from 'react';
 import { ArrowRight, Download } from 'lucide-react';
+
+// GlowButton with ripple effect
+import Link from 'next/link';
 
 // Dynamic mesh background component
 function DynamicMeshBackground() {
@@ -34,7 +37,7 @@ function DynamicMeshBackground() {
         ctx.fillStyle = grad;
         ctx.fill();
       }
-      frame++;
+      frame += 1;
       requestAnimationFrame(draw);
     }
     draw();
@@ -115,20 +118,26 @@ export function Hero() {
         </motion.div>
         {/* Main Headline with parallax tilt */}
         <ParallaxHeadline>
-        <motion.h1
-          className="text-4xl sm:text-5xl lg:text-7xl font-switzer font-bold text-white mb-6 leading-tight drop-shadow-[0_0_32px_#CBFF4D88]"
-          variants={itemVariants}
-        >
-          Fullstack Development <br />
-          & <span className="gradient-text">AI Solutions</span>
-        </motion.h1>
+          <motion.h1
+            className="text-4xl sm:text-5xl lg:text-7xl font-switzer font-bold text-white mb-6 leading-tight drop-shadow-[0_0_32px_#CBFF4D88]"
+            variants={itemVariants}
+          >
+            Fullstack Development
+            {' '}
+            <br />
+            &
+            {' '}
+            <span className="gradient-text">AI Solutions</span>
+          </motion.h1>
         </ParallaxHeadline>
         {/* Subtitle */}
         <motion.p
           className="text-xl sm:text-2xl text-steel mb-12 max-w-3xl mx-auto leading-relaxed"
           variants={itemVariants}
         >
-          Web, backend, and AI automation for startups and businesses: from idea to launch I build robust products and integrate the latest AI        </motion.p>
+          Web, backend, and AI automation for startups and businesses: from idea to launch I build robust products and integrate the latest AI
+          {' '}
+        </motion.p>
 
         {/* CTA Buttons */}
         <motion.div
@@ -203,25 +212,22 @@ function ParallaxHeadline({ children }: { children: React.ReactNode }) {
     </div>
   );
 }
-
-// GlowButton with ripple effect
-import Link from 'next/link';
 function GlowButton({ children, className = '', ...props }: any) {
   const btnRef = useRef<HTMLAnchorElement>(null);
-  function handleClick(e: React.MouseEvent) {
+  const handleClick = useCallback((e: React.MouseEvent) => {
     const btn = btnRef.current;
     if (!btn) return;
     const circle = document.createElement('span');
     circle.className = 'ripple';
     const size = Math.max(btn.offsetWidth, btn.offsetHeight);
-    circle.style.width = circle.style.height = size + 'px';
-    circle.style.left = e.nativeEvent.offsetX - size / 2 + 'px';
-    circle.style.top = e.nativeEvent.offsetY - size / 2 + 'px';
+    circle.style.width = circle.style.height = `${size}px`;
+    circle.style.left = `${e.nativeEvent.offsetX - size / 2}px`;
+    circle.style.top = `${e.nativeEvent.offsetY - size / 2}px`;
     btn.appendChild(circle);
     setTimeout(() => circle.remove(), 600);
-  }
+  }, []);
   return (
-    <Link ref={btnRef} {...props} className={className + ' relative overflow-hidden glow-btn'} onClick={handleClick}>
+    <Link ref={btnRef} {...props} className={`${className} relative overflow-hidden glow-btn`} onClick={handleClick}>
       {children}
     </Link>
   );

@@ -1,10 +1,10 @@
 import { notFound } from 'next/navigation';
-import { getCaseBySlug } from '../../../../content/cases';
 import { readFileSync, existsSync } from 'fs';
 import path from 'path';
 import Link from 'next/link';
-import CaseAnimatedContent from '../../../components/CaseAnimatedContent';
 import matter from 'gray-matter';
+import CaseAnimatedContent from '../../../components/CaseAnimatedContent';
+import { getCaseBySlug } from '../../../../content/cases';
 import CaseMdxAnimatedBlock from '../../../components/CaseMdxAnimatedBlock';
 
 interface CasePageProps {
@@ -38,7 +38,7 @@ export default async function CasePage({ params }: CasePageProps) {
               aria-label="View project on external site"
             >
               View Project
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 7L7 17M17 7h-6m6 0v6"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 7L7 17M17 7h-6m6 0v6" /></svg>
             </Link>
           </div>
         )}
@@ -49,4 +49,4 @@ export default async function CasePage({ params }: CasePageProps) {
       </div>
     </section>
   );
-} 
+}

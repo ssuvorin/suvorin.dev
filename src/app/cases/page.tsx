@@ -12,4 +12,4 @@ export default function AllCasesPage() {
       </div>
     </section>
   );
-} 
+}

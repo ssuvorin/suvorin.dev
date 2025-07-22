@@ -1,29 +1,31 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { MessageCircle, Clock, UserCheck, LifeBuoy } from 'lucide-react';
+import {
+  MessageCircle, Clock, UserCheck, LifeBuoy,
+} from 'lucide-react';
 import Tilt from 'react-parallax-tilt';
 
 const wowFeatures = [
   {
     icon: MessageCircle,
     title: 'Direct Chat',
-    subtitle: 'No managers. You always talk to me'
+    subtitle: 'No managers. You always talk to me',
   },
   {
     icon: Clock,
     title: 'Fast Response',
-    subtitle: 'Quick answers, no waiting'
+    subtitle: 'Quick answers, no waiting',
   },
   {
     icon: UserCheck,
     title: 'Personal Approach',
-    subtitle: 'Every project is hands-on and unique'
+    subtitle: 'Every project is hands-on and unique',
   },
   {
     icon: LifeBuoy,
     title: 'Ongoing Support',
-    subtitle: 'I stay with you after launch'
+    subtitle: 'I stay with you after launch',
   },
 ];
 
@@ -39,7 +41,9 @@ export function Testimonials() {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-4xl sm:text-5xl font-switzer font-bold text-white mb-4">
-            Why <span className="gradient-text">Clients Choose Me</span>
+            Why
+            {' '}
+            <span className="gradient-text">Clients Choose Me</span>
           </h2>
         </motion.div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
@@ -50,7 +54,7 @@ export function Testimonials() {
               tiltMaxAngleY={18}
               scale={1.04}
               transitionSpeed={400}
-              glareEnable={true}
+              glareEnable
               glareMaxOpacity={0.18}
               className="group"
             >

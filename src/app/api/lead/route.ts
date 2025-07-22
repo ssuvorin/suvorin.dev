@@ -2,7 +2,9 @@ import { NextRequest, NextResponse } from 'next/server';
 
 export async function POST(request: NextRequest) {
   try {
-    const { name, email, phone, project } = await request.json();
+    const {
+      name, email, phone, project,
+    } = await request.json();
 
     // Validate required fields
     if (!name || !email || !phone || !project) {
@@ -25,17 +27,16 @@ export async function POST(request: NextRequest) {
     const databaseId = process.env.NOTION_LEADS_DB;
 
     if (!notionKey || !databaseId) {
-      console.error('Notion configuration missing');
       return NextResponse.json(
         { error: 'Notion configuration missing' },
         { status: 500 },
       );
     }
 
-    const response = await fetch(`https://api.notion.com/v1/pages`, {
+    const response = await fetch('https://api.notion.com/v1/pages', {
       method: 'POST',
       headers: {
-        'Authorization': `Bearer ${notionKey}`,
+        Authorization: `Bearer ${notionKey}`,
         'Notion-Version': '2022-06-28',
         'Content-Type': 'application/json',
       },
@@ -52,7 +53,7 @@ export async function POST(request: NextRequest) {
             ],
           },
           Email: {
-            email: email,
+            email,
           },
           Phone: {
             phone_number: phone,
@@ -80,8 +81,9 @@ export async function POST(request: NextRequest) {
       try {
         const data = await response.json();
         errorMsg = data.message || JSON.stringify(data);
-      } catch {}
-      console.error('Notion API error:', errorMsg);
+      } catch {
+        // no-op: error handled by fallback
+      }
       return NextResponse.json(
         { error: errorMsg },
         { status: 500 },
@@ -93,7 +95,6 @@ export async function POST(request: NextRequest) {
       { status: 200 },
     );
   } catch (error) {
-    console.error('Lead API error:', error);
     return NextResponse.json(
       { error: 'Internal server error' },
       { status: 500 },

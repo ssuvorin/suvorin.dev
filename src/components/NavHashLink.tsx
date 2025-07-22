@@ -1,7 +1,16 @@
-"use client";
+'use client';
+
 import { useRouter, usePathname } from 'next/navigation';
 
-export function NavHashLink({ href, children, ...props }: { href: string; children: React.ReactNode; [key: string]: any }) {
+export function NavHashLink({
+  href,
+  children,
+  ...props
+}: {
+  href: string;
+  children: React.ReactNode;
+  [key: string]: any;
+}) {
   const router = useRouter();
   const pathname = usePathname();
 
@@ -14,13 +23,13 @@ export function NavHashLink({ href, children, ...props }: { href: string; childr
       }
     } else if (href.startsWith('#')) {
       e.preventDefault();
-      router.push('/' + href);
+      router.push(`/${href}`);
     }
   };
 
   return (
-    <a href={pathname === '/' ? href : '/' + href} onClick={handleClick} {...props}>
+    <a href={pathname === '/' ? href : `/${href}`} onClick={handleClick} {...props}>
       {children}
     </a>
   );
-} 
+}
