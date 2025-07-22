@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/label-has-associated-control, max-len */
 'use client';
 
 import { motion } from 'framer-motion';

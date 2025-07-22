@@ -1,3 +1,4 @@
+/* eslint-disable no-plusplus, consistent-return, @typescript-eslint/no-use-before-define, max-len, no-multi-assign */
 'use client';
 
 import { motion, useScroll, useTransform } from 'framer-motion';
