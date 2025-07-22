@@ -104,7 +104,8 @@ export function Services() {
                 scale={1.01}
                 transitionSpeed={400}
                 glareEnable
-                glareMaxOpacity={0.3}
+                glareMaxOpacity={0.07}
+                glareColor="#fff"
                 className="h-full"
               >
                 <div className="glassmorphism rounded-xl p-6 h-full card-tilt group">

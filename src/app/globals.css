@@ -37,6 +37,7 @@
 
   .glassmorphism {
     @apply backdrop-blur-sm bg-onyx/50 border border-onyx/40;
+    overflow: hidden;
   }
 
   .btn-primary {
@@ -215,4 +216,16 @@
 }
 *, *:hover, *:active, *:focus {
   cursor: none !important;
+} 
+.glare-wrapper {
+  border-radius: 1rem !important; /* или 0.75rem, как у rounded-xl */
+  overflow: hidden !important;
+}
+.glassmorphism .glare-wrapper {
+  border-radius: inherit !important;
+  overflow: hidden !important;
+}
+.card-tilt .glare-wrapper {
+  border-radius: inherit !important;
+  overflow: hidden !important;
 } 
