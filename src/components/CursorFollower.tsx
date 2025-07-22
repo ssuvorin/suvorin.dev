@@ -64,7 +64,7 @@ export function CursorFollower() {
     cursorY.set(mousePosition.y);
   }, [mousePosition.x, mousePosition.y, cursorX, cursorY]);
 
-  // For scale/opacity ternary at L67, extract to variables:
+  // For scale/opacity ternary at L68, extract to variables:
   const scale = isVisible ? (isActive ? 1.6 : 1) : 0;
   const opacity = isVisible ? 1 : 0;
 
