@@ -1,0 +1,57 @@
+---
+title: "TwitForwarder: Telegram Bot for X (Twitter) Monitoring"
+year: 2024
+hero: "/img/cases/placeholder.png"
+stack: ["Python", "aiogram", "playwright", "sqlite3", "bs4"]
+problem: "No easy way to monitor X (Twitter) accounts and forward tweets to Telegram."
+solution: "Telegram bot tracks X accounts, fetches latest tweets, and sends updates to chats."
+result: "• Automated tweet monitoring\n• Telegram notifications\n• Multi-account support"
+---
+
+# TwitForwarder: Telegram Bot for X (Twitter) Monitoring
+
+## The Challenge
+
+- **No easy way to monitor X (Twitter) accounts and forward tweets to Telegram**
+- **Manual checking is slow and unreliable**
+
+## The Solution
+
+A Python Telegram bot that:
+- Tracks multiple X (Twitter) accounts
+- Fetches latest tweets using Playwright and TLS client
+- Sends new tweet notifications to Telegram chats
+- Stores tracking info in SQLite
+
+## Technical Implementation
+
+- **Python/aiogram**: Telegram bot logic
+- **playwright**: Headless browser for tweet fetching
+- **bs4**: HTML parsing
+- **sqlite3**: Local database for tracking
+
+## Results
+
+- **Automated tweet monitoring**
+- **Telegram notifications for new tweets**
+- **Multi-account support**
+
+## Key Features
+
+- Add/remove tracked accounts
+- Real-time tweet forwarding
+- Manual and automated update checks
+
+## Technology Stack
+
+- Python
+- aiogram
+- playwright
+- sqlite3
+- bs4
+
+## Future Roadmap
+
+1. Web dashboard for account management
+2. Media and thread support
+3. Analytics and reporting 

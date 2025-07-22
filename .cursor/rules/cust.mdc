@@ -1,0 +1,19 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+• Lint & Format  – ESLint + Prettier (airbnb-typescript). tsconfig strict + exactOptionalPropertyTypes.
+• Folder layout  – use only src/(components|pages|lib|hooks|types|styles); no nesting deeper than 3.
+• Naming – PascalCase React comps, camelCase helpers/hooks (useX).
+• RSC default – make components server-side unless state/browser API needed; add “use client” sparingly.
+• State – local → React Context → zustand if really global. No Redux.
+• Motion variants – centralise in /lib/motion.ts, import in comps (don’t inline).
+• Accessibility – all interactive elements get role/aria-* + keyboard focus styles; fail build on jsx-a11y errors.
+• API routes – edge runtime, stateless; switch to node if Notion call >10 s.
+• Env vars – expose with NEXT_PUBLIC_ only when safe; validate server-side.
+• Testing – Vitest + RTL stub for every component; at least one happy-path test per page.
+• Git hooks – pre-commit: pnpm lint && pnpm test --run; pre-push: pnpm build.
+• Commits – Conventional Commits; PR must link Vercel preview.
+• Media – Next /Image optimisation; Lottie JSON ≤2 MB in /public/animations.
+• Perf budget – JS ≤150 kB initial, LCP ≤2.5 s on slow 4G.
