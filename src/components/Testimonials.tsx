@@ -1,31 +1,41 @@
 'use client';
 
-import { motion } from 'framer-motion';
 import {
-  MessageCircle, Clock, UserCheck, LifeBuoy,
+  MessageSquare, Zap, Brain, LifeBuoy,
 } from 'lucide-react';
-import Tilt from 'react-parallax-tilt';
 
 const wowFeatures = [
   {
-    icon: MessageCircle,
+    icon: MessageSquare,
     title: 'Direct Chat',
     subtitle: 'No managers. You always talk to me',
+    color: 'from-cyber-lime to-green-400',
+    glow: 'bg-cyber-lime/20',
+    iconColor: 'text-cyber-lime',
   },
   {
-    icon: Clock,
+    icon: Zap,
     title: 'Fast Response',
     subtitle: 'Quick answers, no waiting',
+    color: 'from-electric to-blue-400',
+    glow: 'bg-electric/20',
+    iconColor: 'text-electric',
   },
   {
-    icon: UserCheck,
+    icon: Brain,
     title: 'Personal Approach',
     subtitle: 'Every project is hands-on and unique',
+    color: 'from-purple-400 to-pink-400',
+    glow: 'bg-purple-400/20',
+    iconColor: 'text-purple-300',
   },
   {
     icon: LifeBuoy,
     title: 'Ongoing Support',
     subtitle: 'I stay with you after launch',
+    color: 'from-orange-400 to-red-400',
+    glow: 'bg-orange-400/20',
+    iconColor: 'text-orange-300',
   },
 ];
 
@@ -33,56 +43,36 @@ export function Testimonials() {
   return (
     <section className="py-24 px-4 sm:px-6 lg:px-8 bg-charcoal relative overflow-hidden">
       <div className="max-w-5xl mx-auto relative z-10">
-        <motion.div
-          className="text-center mb-16"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
+        <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl font-switzer font-bold text-white mb-4">
             Why
             {' '}
             <span className="gradient-text">Clients Choose Me</span>
           </h2>
-        </motion.div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
-          {wowFeatures.map((feature, i) => (
-            <Tilt
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-10">
+          {wowFeatures.map((feature) => (
+            <div
               key={feature.title}
-              tiltMaxAngleX={18}
-              tiltMaxAngleY={18}
-              scale={1.04}
-              transitionSpeed={400}
-              glareEnable
-              glareMaxOpacity={0.18}
-              className="group"
+              className="group bg-onyx rounded-3xl p-10 min-h-[240px] border-2 border-cyber-lime/10 shadow-elev-glow transition-all duration-300 hover:-translate-y-2 hover:border-cyber-lime/60 focus-within:border-cyber-lime/60 relative overflow-hidden flex flex-col items-center justify-center cursor-pointer outline-none"
+              tabIndex={0}
+              role="button"
+              aria-label={feature.title}
             >
-              <motion.div
-                className="relative flex flex-col items-center justify-center bg-onyx rounded-2xl p-12 min-h-[260px] border-2 border-transparent shadow-elev-glow transition-all duration-300 overflow-visible wow-card"
-                style={{ boxShadow: '0 0 32px 0 rgba(203,255,77,0.10)' }}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-                whileHover={{ boxShadow: '0 0 48px 8px #CBFF4D55' }}
-              >
-                <motion.div
-                  className="w-20 h-20 rounded-full bg-gradient-to-br from-cyber-lime to-electric flex items-center justify-center mb-6 shadow-elev-glow"
-                  whileHover={{ y: -8, scale: 1.08 }}
-                  transition={{ type: 'spring', stiffness: 200, damping: 12 }}
-                >
-                  <feature.icon className="w-12 h-12 text-white" />
-                </motion.div>
-                <h3 className="text-2xl font-switzer font-bold text-white mb-2 text-center">
-                  {feature.title}
-                </h3>
-                <p className="text-steel text-lg text-center opacity-80">
-                  {feature.subtitle}
-                </p>
-                <div className="wow-card-border absolute inset-0 rounded-2xl pointer-events-none" />
-              </motion.div>
-            </Tilt>
+              {/* Glow background */}
+              <span
+                className={`absolute top-6 left-1/2 -translate-x-1/2 w-24 h-24 rounded-full blur-2xl opacity-70 z-0 ${feature.glow} group-hover:scale-125 group-hover:opacity-90 transition-all duration-300`}
+              />
+              <div className="mb-6 z-10 flex items-center justify-center">
+                <feature.icon className={`w-14 h-14 ${feature.iconColor} drop-shadow-[0_0_16px_rgba(203,255,77,0.4)] group-hover:scale-110 group-hover:drop-shadow-[0_0_32px_rgba(203,255,77,0.7)] transition-transform duration-300`} aria-hidden="true" />
+              </div>
+              <h3 className="text-2xl font-switzer font-bold text-white mb-2 text-center z-10">
+                {feature.title}
+              </h3>
+              <p className="text-steel text-lg text-center opacity-80 z-10">
+                {feature.subtitle}
+              </p>
+            </div>
           ))}
         </div>
       </div>

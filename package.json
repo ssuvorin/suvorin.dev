@@ -29,6 +29,7 @@
     "clsx": "^2.0.0",
     "framer-motion": "^11.0.3",
     "gray-matter": "^4.0.3",
+    "lottie-react": "^2.4.1",
     "lucide-react": "^0.303.0",
     "next": "14.0.4",
     "next-mdx-remote": "^5.0.0",

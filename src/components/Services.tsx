@@ -151,7 +151,7 @@ export function Services() {
           transition={{ duration: 0.6, delay: 0.4 }}
         >
           <p className="text-steel mb-6">
-            Ready to transform your business with AI automation?
+            Ready to transform your business with?
           </p>
           <a
             href="https://wa.me/971585172288?text=Hi%20Suvorin%2C%20need%20AI%20automation"

@@ -69,7 +69,10 @@ export function CTA() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            Ready to build your next product or automate your business with AI?
+            Ready to build
+            <span className="gradient-text">your next product</span>
+            <br />
+            or automate your business with AI?
           </motion.h2>
           <motion.p
             className="text-xl text-steel max-w-3xl mx-auto"
@@ -78,7 +81,7 @@ export function CTA() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            Let’s discuss how fullstack development and AI can drive your business forward.
+            Let’s discuss how fullstack development and AI can drive your business forward
           </motion.p>
         </div>
 

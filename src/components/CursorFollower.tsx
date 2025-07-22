@@ -5,13 +5,19 @@
 import { useEffect, useState } from 'react';
 import { motion, useSpring } from 'framer-motion';
 
+declare global {
+  interface Window {
+    setCustomCursorVisible: ((visible: boolean) => void) | undefined;
+  }
+}
+
 export function CursorFollower() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isVisible, setIsVisible] = useState(false);
   const [isActive, setIsActive] = useState(false);
 
   // Быстрое, но плавное движение курсора
-  const springConfig = { damping: 18, stiffness: 180, mass: 0.3 };
+  const springConfig = { damping: 10, stiffness: 400, mass: 0.2 };
   const cursorX = useSpring(0, springConfig);
   const cursorY = useSpring(0, springConfig);
 
@@ -51,12 +57,16 @@ export function CursorFollower() {
     window.addEventListener('mouseover', handlePointerOver);
     window.addEventListener('mouseout', handlePointerOut);
 
+    // Expose global function to control cursor visibility
+    window.setCustomCursorVisible = (visible: boolean) => setIsVisible(visible);
+
     return () => {
       window.removeEventListener('mousemove', updateMousePosition);
       window.removeEventListener('mouseleave', handleMouseLeave);
       window.removeEventListener('mouseenter', handleMouseEnter);
       window.removeEventListener('mouseover', handlePointerOver);
       window.removeEventListener('mouseout', handlePointerOut);
+      window.setCustomCursorVisible = undefined;
     };
   }, []);
 
