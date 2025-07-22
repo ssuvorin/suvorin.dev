@@ -7,6 +7,7 @@ import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 import { CursorFollower } from '@/components/CursorFollower';
 import { Analytics } from '@vercel/analytics/react';
+import Script from 'next/script';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -71,15 +72,18 @@ export default function RootLayout({
         <link href="https://fonts.bunny.net/css?family=switzer:400,500,600,700,800" rel="stylesheet" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         {/* Google Analytics */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-54ED215LQ7"></script>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: 'window.dataLayer = window.dataLayer || [];' +
-              'function gtag(){dataLayer.push(arguments);}' +
-              "gtag('js', new Date());" +
-              "gtag('config', 'G-54ED215LQ7');"
-          }}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-54ED215LQ7"
+          strategy="afterInteractive"
         />
+        <Script id="gtag-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-54ED215LQ7');
+          `}
+        </Script>
       </head>
       <body
         className={`${inter.variable} font-inter bg-charcoal text-steel antialiased overflow-x-hidden`}
