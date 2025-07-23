@@ -112,7 +112,7 @@ export function Hero() {
       >
         {/* Badge */}
         <motion.div
-          className="inline-flex items-center px-4 py-2 rounded-full bg-cyber-lime/10 border border-cyber-lime/20 text-cyber-lime text-sm font-medium mb-8"
+          className="inline-flex items-center px-4 py-2 rounded-full bg-cyber-lime/10 border border-cyber-lime/20 text-cyber-lime text-sm font-medium mb-16 whitespace-nowrap -mt-4"
           variants={itemVariants}
         >
           <span className="w-2 h-2 bg-cyber-lime rounded-full mr-2 animate-pulse" />
@@ -121,7 +121,7 @@ export function Hero() {
         {/* Main Headline with parallax tilt */}
         <ParallaxHeadline>
           <motion.h1
-            className="text-3xl sm:text-5xl lg:text-7xl font-switzer font-bold text-white mb-6 leading-tight drop-shadow-[0_0_32px_#CBFF4D88]"
+            className="text-3xl sm:text-5xl lg:text-7xl font-switzer font-bold text-white mb-16 leading-tight drop-shadow-[0_0_32px_#CBFF4D88]"
             variants={itemVariants}
           >
             Fullstack Development
@@ -134,7 +134,7 @@ export function Hero() {
         </ParallaxHeadline>
         {/* Subtitle */}
         <motion.p
-          className="text-xl sm:text-2xl text-steel mb-12 max-w-3xl mx-auto leading-relaxed"
+          className="text-xl sm:text-2xl text-steel mb-16 max-w-3xl mx-auto leading-relaxed"
           variants={itemVariants}
         >
           Web, backend, and AI automation for startups and businesses: from idea to launch I build robust products and integrate the latest AI
@@ -143,7 +143,7 @@ export function Hero() {
 
         {/* CTA Buttons */}
         <motion.div
-          className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-20"
+          className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-32 sm:mb-20"
           variants={itemVariants}
         >
           <GlowButton
@@ -171,7 +171,7 @@ export function Hero() {
 
       {/* Scroll Indicator */}
       <motion.div
-        className="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 pb-16 sm:pb-0"
+        className="absolute bottom-2 sm:bottom-8 left-1/2 transform -translate-x-1/2 pb-16 sm:pb-0"
         animate={{ y: [0, 10, 0] }}
         transition={{ duration: 2, repeat: Infinity }}
       >

@@ -82,7 +82,7 @@ export function CursorFollower() {
 
   return (
     <motion.div
-      className="custom-cursor z-50 pointer-events-none"
+      className="custom-cursor z-50 pointer-events-none hidden sm:block"
       style={{
         x: cursorX,
         y: cursorY,
