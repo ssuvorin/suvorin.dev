@@ -171,7 +171,7 @@ export function Hero() {
 
       {/* Scroll Indicator */}
       <motion.div
-        className="absolute bottom-2 sm:bottom-8 left-1/2 transform -translate-x-1/2 pb-16 sm:pb-0"
+        className="absolute bottom-2 sm:bottom-8 left-1/2 transform -translate-x-1/2 pb-16 sm:pb-0 hidden sm:block"
         animate={{ y: [0, 10, 0] }}
         transition={{ duration: 2, repeat: Infinity }}
       >
