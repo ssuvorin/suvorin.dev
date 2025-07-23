@@ -94,7 +94,7 @@ export function Hero() {
   return (
     <section
       ref={containerRef}
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24 sm:pt-28 lg:pt-32"
       id="hero"
     >
       {/* Dynamic Mesh Background */}
@@ -121,7 +121,7 @@ export function Hero() {
         {/* Main Headline with parallax tilt */}
         <ParallaxHeadline>
           <motion.h1
-            className="text-4xl sm:text-5xl lg:text-7xl font-switzer font-bold text-white mb-6 leading-tight drop-shadow-[0_0_32px_#CBFF4D88]"
+            className="text-3xl sm:text-5xl lg:text-7xl font-switzer font-bold text-white mb-6 leading-tight drop-shadow-[0_0_32px_#CBFF4D88]"
             variants={itemVariants}
           >
             Fullstack Development
@@ -143,7 +143,7 @@ export function Hero() {
 
         {/* CTA Buttons */}
         <motion.div
-          className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+          className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-20"
           variants={itemVariants}
         >
           <GlowButton
@@ -171,11 +171,11 @@ export function Hero() {
 
       {/* Scroll Indicator */}
       <motion.div
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+        className="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 pb-16 sm:pb-0"
         animate={{ y: [0, 10, 0] }}
         transition={{ duration: 2, repeat: Infinity }}
       >
-        <div className="w-6 h-10 border-2 border-steel rounded-full flex justify-center">
+        <div className="w-5 h-8 sm:w-6 sm:h-10 border-2 border-steel rounded-full flex justify-center">
           <div className="w-1 h-3 bg-cyber-lime rounded-full mt-2 animate-pulse" />
         </div>
       </motion.div>

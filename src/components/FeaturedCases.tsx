@@ -39,7 +39,7 @@ export function FeaturedCases() {
   };
 
   return (
-    <section id="cases" className="py-20 px-4 sm:px-6 lg:px-8 bg-charcoal">
+    <section id="cases" className="py-12 sm:py-20 px-2 sm:px-6 lg:px-8 bg-charcoal">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <motion.div
@@ -73,7 +73,7 @@ export function FeaturedCases() {
         {/* Cases Grid */}
         <motion.div
           ref={ref}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
           variants={containerVariants}
           initial="hidden"
           animate={inView ? 'visible' : 'hidden'}
