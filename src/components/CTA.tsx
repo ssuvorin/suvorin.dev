@@ -69,8 +69,8 @@ export function CTA() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            Ready to build 
-            <span className="gradient-text">your next product</span>
+            Ready to build
+            <span className="gradient-text"> your next product</span>
             <br />
             or automate your business with AI?
           </motion.h2>
