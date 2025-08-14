@@ -5,6 +5,7 @@ import { useInView } from 'react-intersection-observer';
 import {
   Search, Palette, Settings, Rocket,
 } from 'lucide-react';
+import Link from 'next/link';
 
 const steps = [
   {
@@ -232,15 +233,13 @@ export function Process() {
           <p className="text-steel mb-6 text-xl">
             Ready to start your AI automation journey with me?
           </p>
-          <a
-            href="https://wa.me/971585172288?text=Hi%20Suvorin%2C%20need%20AI%20automation"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href="/#contact"
             className="btn-primary inline-flex items-center text-lg px-10 py-5 shadow-elev-glow animate-glow"
           >
             Start Your Project with Me
             <Rocket className="ml-2 h-6 w-6" />
-          </a>
+          </Link>
         </motion.div>
       </div>
     </section>

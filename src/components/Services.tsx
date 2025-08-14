@@ -154,9 +154,7 @@ export function Services() {
             Ready to transform your business with?
           </p>
           <a
-            href="https://wa.me/971585172288?text=Hi%20Suvorin%2C%20need%20AI%20automation"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/#contact"
             className="btn-primary inline-flex items-center"
           >
             Start Your Project

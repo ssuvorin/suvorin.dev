@@ -62,9 +62,7 @@ export function Navbar() {
               </NavHashLink>
             ))}
             <Link
-              href="https://wa.me/971585172288?text=Hi%20Suvorin%2C%20need%20AI%20automation"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/#contact"
               className="btn-primary btn-primary--sm"
             >
               Book a Call
@@ -106,9 +104,7 @@ export function Navbar() {
                   </NavHashLink>
                 ))}
                 <Link
-                  href="https://wa.me/971585172288?text=Hi%20Suvorin%2C%20need%20AI%20automation"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="/#contact"
                   className="block px-3 py-2 btn-primary text-center"
                   onClick={() => setIsOpen(false)}
                 >

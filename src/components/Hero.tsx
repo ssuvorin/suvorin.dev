@@ -147,9 +147,7 @@ export function Hero() {
           variants={itemVariants}
         >
           <GlowButton
-            href="https://wa.me/971585172288?text=Hi%20Suvorin%2C%20need%20AI%20automation"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/#contact"
             className="btn-primary group"
           >
             <span className="flex items-center justify-center">

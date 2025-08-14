@@ -136,14 +136,12 @@ export function Footer() {
               >
                 hello@suvorin.dev
               </a>
-              <a
-                href="https://wa.me/971585172288?text=Hi%20Suvorin%2C%20need%20AI%20automation"
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                href="/#contact"
                 className="btn-primary text-sm px-4 py-2"
               >
                 Let&apos;s Build Something
-              </a>
+              </Link>
             </div>
           </div>
         </div>

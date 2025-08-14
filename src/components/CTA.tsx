@@ -276,12 +276,10 @@ export function CTA() {
                 Prefer to chat directly?
               </p>
               <a
-                href="https://wa.me/971585172288?text=Hi%20Suvorin%2C%20need%20AI%20automation"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/#contact"
                 className="btn-secondary inline-flex items-center"
               >
-                Chat on WhatsApp
+                Open Contact Form
                 <Send className="ml-2 h-5 w-5" />
               </a>
             </div>
